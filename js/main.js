@@ -29,10 +29,10 @@ var app = {
 		$(window).on('hashchange', $.proxy(this.route, this));
 	},
 	route: function() {
-		var self = this;
+		
 		var hash = window.location.hash;
 		if (!hash) {
-			self.showAlert('Store Initialized', 'Info');
+			
 			$('body').html(new HomeView(this.store).render().el);
 			return;
 		}
@@ -49,6 +49,7 @@ var app = {
 		this.detailsURL = /^#employees\/(\d{1,})/;
 		this.registerEvents();
 		this.store = new MemoryStore(function() {
+			self.showAlert('Store Initialized', 'Info');
 			self.route();
 		});		
 		
