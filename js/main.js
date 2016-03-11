@@ -43,7 +43,6 @@ var app = {
 			});
 		}
 	},
-    
     initialize: function() {
         var self = this;
 		this.detailsURL = /^#employees\/(\d{1,})/;
